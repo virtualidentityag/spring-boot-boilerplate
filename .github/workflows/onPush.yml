@@ -1,9 +1,13 @@
 name: Maven Verify 
 
-on: [push]
+on:
+  push:
+    paths-ignore:
+      - 'README.md'
+      - 'doc/**'
 
 jobs:
-  build:
+  verify:
 
     runs-on: ubuntu-latest
 
