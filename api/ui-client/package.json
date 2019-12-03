@@ -1,0 +1,16 @@
+{
+  "name": "CAD-API",
+  "version": "1.0.0",
+  "description": "Siedle CAD REST API",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "Virtual Identity AG",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.13.4",
+    "swagger-ui-express": "latest",
+    "yamljs": "latest"
+  }
+}

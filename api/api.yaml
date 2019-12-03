@@ -1,0 +1,120 @@
+openapi: '3.0.2'
+
+info:
+  version: 1.0.0
+  title: vi-demo
+
+servers:
+  - url: '{protocol}://localhost'
+    variables:
+      protocol:
+        enum:
+          - http
+          - https
+        default: https
+
+paths:
+  /authors:
+    get:
+      tags:
+        - author
+      operationId: getAuthors
+      parameters:
+       - name: limit
+         description: number of returned results
+         in: query
+         schema:
+           type: integer
+           default: 10
+       - name: offset
+         description: offset of returned results
+         in: query
+         schema:
+           type: integer
+           default: 0
+      responses:
+        200:
+          description: operation successful
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/authorList'
+
+  /authors/{id}:
+    get:
+      tags:
+        - author
+      operationId: getAuthorById
+      parameters:
+       - name: id
+         description: id of author
+         in: path
+         schema:
+           type: integer
+      responses:
+        200:
+          description: operation successful
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/author'
+
+components:
+  schemas:
+
+    authorList:
+      type: object
+      description: pageable list of authors
+      required:
+        - _links
+        - _embedded
+      properties:
+        _embedded:
+          type: array
+          description: current page of list of found authors
+          items:
+            $ref: '#/components/schemas/author'
+        _links:
+          type: object
+          required:
+            - self
+          properties:
+            self:
+              $ref: '#/components/schemas/halLink'
+            next:
+              $ref: '#/components/schemas/halLink'
+            previous:
+              $ref: '#/components/schemas/halLink'
+
+    author:
+      type: object
+      description: author with first and last name
+      required:
+        - firstname
+        - lastname
+      properties:
+        firstname:
+          type: string
+        lastname:
+          type: string
+        _links:
+          type: object
+          required:
+            - self
+          properties:
+            self:
+              $ref: '#/components/schemas/halLink'
+
+
+    halLink:
+      type: object
+      required:
+        - href
+      properties:
+        href:
+          type: string
+        method:
+          type: string
+          enum: [GET, POST, DELETE]
+        templated:
+          type: boolean
