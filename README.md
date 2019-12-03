@@ -4,7 +4,7 @@
 To create a new project, create a new github repository and select this project as repository template.
   
 ## Implement endpoints
-####1. Define endpoints in api.yaml
+#### 1. Define endpoints in api.yaml
 Open [api/api.yaml](api/api.yaml) and adapt/extend the endpoint and  model definitions according to OpenAPI 3.0 specification.
 
 To check your api spec visually, run
@@ -14,13 +14,13 @@ npm install
 node app.js
  ```
 and call [http://localhost:9999/](http://localhost:9999/) in your browser.
-####2. Generate server models
+#### 2. Generate server models
 Run 
 ```
 mvn clean compile 
 ```
 to generate model classes and controller interfaces for your defined api.
-####3. Implement Spring Controllers
+#### 3. Implement Spring Controllers
 Create new Java Spring Controllers which implements generated API interfaces and overwrite the generated default implementations for your endpoints:
 ```java
 @Controller
