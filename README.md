@@ -42,7 +42,7 @@ public class AuthorController extends BaseController implements AuthorsApi {
 tbd
 
 
-### Reference Documentation
+## Reference Documentation
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
@@ -50,7 +50,7 @@ For further reference, please consider the following sections:
 * [Spring HATEOAS](https://docs.spring.io/spring-boot/docs/2.2.1.RELEASE/reference/htmlsingle/#boot-features-spring-hateoas)
 * [Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/2.2.1.RELEASE/reference/htmlsingle/#production-ready)
 
-### Guides
+## Guides
 The following guides illustrate how to use some features concretely:
 
 * [Building a Hypermedia-Driven RESTful Web Service](https://spring.io/guides/gs/rest-hateoas/)
