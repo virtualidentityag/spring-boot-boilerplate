@@ -3,12 +3,12 @@ package com.vi.demo.authors.web;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import com.vi.demo.web.BaseController;
-import demo.generated.web.AuthorsApi;
-import demo.generated.web.model.Author;
-import demo.generated.web.model.AuthorLinks;
-import demo.generated.web.model.AuthorList;
-import demo.generated.web.model.AuthorListLinks;
-import demo.generated.web.model.HalLink;
+import com.vi.demo.generated.AuthorsApi;
+import com.vi.demo.generated.model.Author;
+import com.vi.demo.generated.model.AuthorLinks;
+import com.vi.demo.generated.model.AuthorList;
+import com.vi.demo.generated.model.AuthorListLinks;
+import com.vi.demo.generated.model.HalLink;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.springframework.http.HttpStatus;

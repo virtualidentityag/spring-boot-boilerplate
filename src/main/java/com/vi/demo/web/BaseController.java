@@ -2,8 +2,8 @@ package com.vi.demo.web;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
-import demo.generated.web.model.HalLink;
-import demo.generated.web.model.HalLink.MethodEnum;
+import com.vi.demo.generated.model.HalLink;
+import com.vi.demo.generated.model.HalLink.MethodEnum;
 import org.springframework.hateoas.Link;
 import org.springframework.http.HttpEntity;
 

@@ -5,8 +5,8 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 
-import demo.generated.web.model.Author;
-import demo.generated.web.model.AuthorList;
+import com.vi.demo.generated.model.Author;
+import com.vi.demo.generated.model.AuthorList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;

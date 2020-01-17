@@ -1,0 +1,121 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.3.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	id 'idea'
+	id 'jacoco'
+	id 'org.openapi.generator' version '4.2.1'
+}
+
+
+group = 'com.vi.demo'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '13'
+
+configurations {
+	testIntegrationCompile.extendsFrom testCompile
+	testIntegrationRuntime.extendsFrom testRuntime
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter-actuator'
+	compile 'org.springframework.boot:spring-boot-starter-hateoas'
+
+	// add to fix incompatibility of sprong boot
+	compile 'org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE'
+
+	compile 'io.swagger:swagger-annotations:1.5.0'
+	compile group: 'org.openapitools', name: 'jackson-databind-nullable', version: '0.2.1'
+
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+
+	testCompile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+
+	testCompile('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+sourceSets {
+	main {
+		java.srcDirs file('src/main/java')
+		java.srcDirs file('build/generated/openapi/src/main/java')
+		resources.srcDirs file('src/main/resources')
+	}
+	testIntegration {
+		java {
+			compileClasspath += main.output + test.output
+			runtimeClasspath += main.output + test.output
+			srcDir file('src/testIntegration/java')
+		}
+		resources.srcDir file('src/testIntegration/resources')
+	}
+}
+
+idea {
+	module {
+		testSourceDirs += project.sourceSets.testIntegration.java.srcDirs
+		testSourceDirs += project.sourceSets.testIntegration.resources.srcDirs
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
+
+bootJar {
+	archiveFileName = "app.${archiveExtension.get()}"
+}
+
+compileJava.dependsOn tasks.openApiGenerate
+// Actual task for generating the server
+openApiGenerate {
+	generatorName.set("spring")
+
+	inputSpec.set(file('./api/api.yaml').getAbsolutePath())
+	outputDir.set("$buildDir/generated/openapi")
+
+	apiPackage.set("com.vi.demo.generated")
+	invokerPackage.set("com.vi.demo.invoker")
+	modelPackage.set("com.vi.demo.generated.model")
+
+	configOptions = [
+			dateLibrary: "java8"
+	]
+
+	additionalProperties = [
+			"interfaceOnly" : "true"
+	]
+}
+
+task testIntegration(type: Test) {
+	testClassesDirs = sourceSets.testIntegration.output.classesDirs
+	classpath = sourceSets.testIntegration.runtimeClasspath
+
+	systemProperty 'spring.profiles.active', 'integration_test'
+
+	useJUnitPlatform()
+
+	// This is not needed, but I like to see which tests have run
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+}
+
+test.finalizedBy jacocoTestReport
+testIntegration.finalizedBy jacocoTestReport
+
+build.dependsOn('testIntegration')
+
+jacocoTestReport {
+	reports {
+		xml.enabled false
+		csv.enabled false
+		html.destination file("${buildDir}/jacocoHtml")
+	}
+}

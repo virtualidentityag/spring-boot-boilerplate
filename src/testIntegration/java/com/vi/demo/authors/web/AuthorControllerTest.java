@@ -4,8 +4,8 @@ import static com.vi.demo.ApiMatchers.responseMatchesModel;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.vi.demo.WebMvcTest;
-import demo.generated.web.model.Author;
-import demo.generated.web.model.AuthorList;
+import com.vi.demo.generated.model.Author;
+import com.vi.demo.generated.model.AuthorList;
 import org.junit.jupiter.api.Test;
 
 public class AuthorControllerTest extends WebMvcTest {
