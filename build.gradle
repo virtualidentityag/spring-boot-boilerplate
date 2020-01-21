@@ -7,7 +7,6 @@ plugins {
 	id 'org.openapi.generator' version '4.2.1'
 }
 
-
 group = 'com.myCompanyName.myProjectName'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '13'
