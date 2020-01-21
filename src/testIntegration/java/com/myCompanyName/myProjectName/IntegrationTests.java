@@ -1,4 +1,4 @@
-package com.vi.demo;
+package com.myCompanyName.myProjectName;
 
 import org.junit.jupiter.api.Tag;
 import org.springframework.boot.test.context.SpringBootTest;

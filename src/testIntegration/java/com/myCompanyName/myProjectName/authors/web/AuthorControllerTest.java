@@ -1,11 +1,11 @@
-package com.vi.demo.authors.web;
+package com.myCompanyName.myProjectName.authors.web;
 
-import static com.vi.demo.ApiMatchers.responseMatchesModel;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.vi.demo.WebMvcTest;
-import com.vi.demo.generated.model.Author;
-import com.vi.demo.generated.model.AuthorList;
+import com.myCompanyName.myProjectName.ApiMatchers;
+import com.myCompanyName.myProjectName.WebMvcTest;
+import com.myCompanyName.myProjectName.generated.model.Author;
+import com.myCompanyName.myProjectName.generated.model.AuthorList;
 import org.junit.jupiter.api.Test;
 
 public class AuthorControllerTest extends WebMvcTest {
@@ -19,7 +19,7 @@ public class AuthorControllerTest extends WebMvcTest {
 
         // Assert
         .andExpect(status().isOk())
-        .andExpect(responseMatchesModel(AuthorList.class));
+        .andExpect(ApiMatchers.responseMatchesModel(AuthorList.class));
   }
 
   @Test
@@ -33,7 +33,7 @@ public class AuthorControllerTest extends WebMvcTest {
 
         // Assert
         .andExpect(status().isOk())
-        .andExpect(responseMatchesModel(Author.class));
+        .andExpect(ApiMatchers.responseMatchesModel(Author.class));
   }
 
 }

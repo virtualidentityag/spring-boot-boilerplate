@@ -8,7 +8,7 @@ plugins {
 }
 
 
-group = 'com.vi.demo'
+group = 'com.myCompanyName.myProjectName'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '13'
 
@@ -80,9 +80,9 @@ openApiGenerate {
 	inputSpec.set(file('./api/api.yaml').getAbsolutePath())
 	outputDir.set("$buildDir/generated/openapi")
 
-	apiPackage.set("com.vi.demo.generated")
-	invokerPackage.set("com.vi.demo.invoker")
-	modelPackage.set("com.vi.demo.generated.model")
+	apiPackage.set("com.myCompanyName.myProjectName.generated")
+	invokerPackage.set("com.myCompanyName.myProjectName.invoker")
+	modelPackage.set("com.myCompanyName.myProjectName.generated.model")
 
 	configOptions = [
 			dateLibrary: "java8"

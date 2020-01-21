@@ -1,4 +1,4 @@
-package com.vi.demo.config;
+package com.myCompanyName.myProjectName.config;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

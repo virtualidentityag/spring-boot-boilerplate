@@ -2,7 +2,7 @@ openapi: '3.0.2'
 
 info:
   version: 1.0.0
-  title: vi-demo
+  title: myCompanyName-myProjectName
 
 servers:
   - url: '{protocol}://localhost'

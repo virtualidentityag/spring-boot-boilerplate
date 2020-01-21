@@ -1,4 +1,4 @@
-package com.vi.demo;
+package com.myCompanyName.myProjectName;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
