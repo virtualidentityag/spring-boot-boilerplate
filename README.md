@@ -1,7 +1,12 @@
 # Getting Started
 
 ## Create new project 
-To create a new project, create a new github repository and select this project as repository template.
+1. To create a new project, create a new github repository and select this project as repository template.
+2. After that do a fulltext search and replace in your new project for the following:
+    * "myCompanyName"  -> to abbreviation of company, e. g. "vi"
+    * "myProjectName"  -> to name of project, e. g. "search"
+   
+   This will result in a fully initialized project with adapted root packages (e. g. com.vi.search) 
 
 ## Quick Start
 
