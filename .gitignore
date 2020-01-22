@@ -30,3 +30,8 @@ build/
 ### VS Code ###
 .vscode/
 /api/ui-client/node_modules/
+.gradle/6.0.1/fileChanges/last-build.bin
+.gradle/6.0.1/gc.properties
+.gradle/buildOutputCleanup/cache.properties
+.gradle/vcs-1/gc.properties
+api/ui-client/package-lock.json
