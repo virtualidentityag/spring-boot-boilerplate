@@ -1,8 +1,8 @@
-package com.myCompanyName.myProjectName.authors.web;
+package com.myCompanyName.myProjectName.authors.rest;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
-import com.myCompanyName.myProjectName.web.BaseController;
+import com.myCompanyName.myProjectName.common.rest.controller.BaseController;
 import com.myCompanyName.myProjectName.generated.AuthorsApi;
 import com.myCompanyName.myProjectName.generated.model.Author;
 import com.myCompanyName.myProjectName.generated.model.AuthorLinks;
@@ -46,12 +46,15 @@ public class AuthorController extends BaseController implements AuthorsApi {
   @Override
   public ResponseEntity<Author> getAuthorById(@PathVariable("id") Integer id) {
 
-    Author author = new Author()
-        .firstname("Max")
-        .lastname("Mustermann")
-        .links(new AuthorLinks().self(getAuthorLink(id)));
-
-    return new ResponseEntity<>(author, HttpStatus.OK);
+    if(id == 1) {
+      Author author = new Author()
+          .firstname("Max")
+          .lastname("Mustermann")
+          .links(new AuthorLinks().self(getAuthorLink(id)));
+      return new ResponseEntity<>(author, HttpStatus.OK);
+    } else {
+      throw new IllegalArgumentException("Could not find author");
+    }
   }
 
   private HalLink getAuthorLink(Integer id) {

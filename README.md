@@ -60,6 +60,9 @@ public class AuthorController extends BaseController implements AuthorsApi {
 }
 ```
 
+#### 4. Exception Handling
+Adapt and extend the classes `RestExceptionHandler` and `RestErrorCode` to your needs. 
+
 ## Build and deploy project
 A full build including all unit and integration tests can be triggered by running 
 <pre><code>gradlew build</code></pre>

@@ -1,4 +1,4 @@
-package com.myCompanyName.myProjectName.web;
+package com.myCompanyName.myProjectName.common.rest.controller;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 

@@ -1,4 +1,4 @@
-package com.myCompanyName.myProjectName.authors.web;
+package com.myCompanyName.myProjectName.authors.rest;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
