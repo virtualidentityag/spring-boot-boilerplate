@@ -1,21 +1,96 @@
-name: Gradle Build
+name: CI/CD
 
-on:
-  push:
-    paths-ignore:
-      - 'README.md'
-      - 'doc/**'
+on: [push]
+
+env:
+  # you also need to set your release branch in package.json!
+  RELEASE_BRANCH: master
+
+  # set to true if you want to push the artifact to github docker registry
+  PUSH_TO_DOCKER: false
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v1
+
       - name: Set up JDK 13
         uses: actions/setup-java@v1
         with:
           java-version: 13
-      - name: Build with Gradle
+
+      - name: Build & test with Gradle
         run: ./gradlew build
+
+  release:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        if: endsWith(github.ref, env.RELEASE_BRANCH)
+
+      - name: Setup Node.js
+        if: endsWith(github.ref, env.RELEASE_BRANCH)
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install dependencies
+        if: endsWith(github.ref, env.RELEASE_BRANCH)
+        run: npm ci
+
+      - name: Release
+        if: endsWith(github.ref, env.RELEASE_BRANCH)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
+
+  deploy:
+    needs: [test, release]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        if: env.PUSH_TO_DOCKER == 'true'
+
+      - uses: actions/setup-java@v1
+        if: env.PUSH_TO_DOCKER == 'true'
+        with:
+          java-version: 13
+
+      - name: Build jar file
+        if: env.PUSH_TO_DOCKER == 'true'
+        run: ./gradlew bootJar
+
+      - name: Get Previous tag
+        if: env.PUSH_TO_DOCKER == 'true'
+        uses: WyriHaximus/github-action-get-previous-tag@master
+        id: gittag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Docker Build & Push
+        if: env.PUSH_TO_DOCKER == 'true'
+        run: |
+          DOCKER_IMAGE_NAME=$(echo "${{ github.repository }}" | sed -e 's,.*/\(.*\),\1,')
+
+          # Strip git ref prefix from version
+          BRANCH=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+
+          # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && BRANCH=$(echo BRANCH | sed -e 's/^v//')
+
+          TAG=latest
+          [ "$BRANCH" == $RELEASE_BRANCH ] && TAG=${{ steps.gittag.outputs.tag }}
+
+          SUFFIX=_$BRANCH
+          [ "$BRANCH" == $RELEASE_BRANCH ] && SUFFIX=
+
+          echo Docker image name $DOCKER_IMAGE_NAME$SUFFIX
+          echo Docker tag $TAG
+
+          docker login docker.pkg.github.com -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.GITHUB_TOKEN }}
+          docker build -t image .
+          docker tag image docker.pkg.github.com/${{ github.repository }}/$DOCKER_IMAGE_NAME$SUFFIX:$TAG
+          docker push docker.pkg.github.com/${{ github.repository }}/$DOCKER_IMAGE_NAME$SUFFIX:$TAG

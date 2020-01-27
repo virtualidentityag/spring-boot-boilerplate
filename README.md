@@ -6,7 +6,9 @@
     * "myCompanyName"  -> to abbreviation of company, e. g. "vi"
     * "myProjectName"  -> to name of project, e. g. "search"
    
-   This will result in a fully initialized project with adapted root packages (e. g. com.vi.search) 
+   This will result in a fully initialized project with adapted root packages (e. g. com.vi.search)
+3. In [package.json](package.json), adapt `repository.url` to your repsository url.
+4. (Optional) Adapt the CI/CD workflow under[.github/workflows/onPush.yml](.github/workflows/onPush.yml) to your needs (e. g. turn on docker push to registry).
 
 ## Quick Start
 
@@ -67,7 +69,7 @@ Adapt and extend the classes `RestExceptionHandler` and `RestErrorCode` to your 
 A full build including all unit and integration tests can be triggered by running 
 <pre><code>gradlew build</code></pre>
 
-
+## Semantic Versioning
 
 ## Reference Documentation
 For further reference, please consider the following sections:
