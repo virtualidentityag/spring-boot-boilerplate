@@ -1,0 +1,16 @@
+{
+  "name": "Init_Project",
+  "version": "1.0.0",
+  "description": "VI Boilerplate init script",
+  "scripts": {
+    "start": "node init"
+  },
+  "author": "Virtual Identity AG",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "replace-in-files": "latest",
+    "git-remote-origin-url": "latest",
+    "readline-sync": "latest"
+  }
+}
