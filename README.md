@@ -40,7 +40,7 @@ and call [http://localhost:9999/](http://localhost:9999/) in your browser.
 To generate the API (and model classes) the gradle task **generateApi** has to be executed.
 This will generate the API Interface and the model classes.
 
-    gradlew generateApi
+    gradlew openApiGenerate
 
 
 #### 3. Implement Spring Controllers
