@@ -19,6 +19,18 @@ const targetCompanyDir = path.join(sourceDir, targetCompanyName);
 const sourceProjectDir = path.join(targetCompanyDir, sourceProjectName);
 const targetProjectDir = path.join(targetCompanyDir, targetProjectName);
 
+const testDir = path.join(rootDir, 'src', 'test', 'java', 'com');
+const sourceCompanyTestDir = path.join(testDir, sourceCompanyName);
+const targetCompanyTestDir = path.join(testDir, targetCompanyName);
+const sourceProjectTestDir = path.join(targetCompanyTestDir, sourceProjectName);
+const targetProjectTestDir = path.join(targetCompanyTestDir, targetProjectName);
+
+const integrationTestDir = path.join(rootDir, 'src', 'testIntegration', 'java', 'com');
+const sourceCompanyIntegrationTestDir = path.join(integrationTestDir, sourceCompanyName);
+const targetCompanyIntegrationTestDir = path.join(integrationTestDir, targetCompanyName);
+const sourceProjectIntegrationTestDir = path.join(targetCompanyIntegrationTestDir, sourceProjectName);
+const targetProjectIntegrationTestDir = path.join(targetCompanyIntegrationTestDir, targetProjectName);
+
 function sanitize(input) {
   input = input.toLowerCase();
   input = input.replace(/[\W_]+/g,"");
@@ -109,6 +121,46 @@ async function run() {
         console.log(err)
       } else {
         console.log("Successfully renamed the directory.")
+      }
+    });
+  }
+
+  if(fs.existsSync(sourceCompanyTestDir)) {
+    fs.renameSync(sourceCompanyTestDir, targetCompanyTestDir, function(err) {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log("Successfully renamed the test directory.")
+      }
+    });
+  }
+
+  if(fs.existsSync(sourceProjectTestDir)) {
+    fs.renameSync(sourceProjectTestDir, targetProjectTestDir, function (err) {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log("Successfully renamed the test directory.")
+      }
+    });
+  }
+
+  if(fs.existsSync(sourceCompanyIntegrationTestDir)) {
+    fs.renameSync(sourceCompanyIntegrationTestDir, targetCompanyIntegrationTestDir, function(err) {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log("Successfully renamed the integration test directory.")
+      }
+    });
+  }
+
+  if(fs.existsSync(sourceProjectIntegrationTestDir)) {
+    fs.renameSync(sourceProjectIntegrationTestDir, targetProjectIntegrationTestDir, function (err) {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log("Successfully renamed the integration test directory.")
       }
     });
   }
