@@ -12,7 +12,7 @@ console.log('Your generated companyName: ' + targetCompanyName);
 const targetProjectName = sanitize(readlineSync.question('Please enter your PROJECT name [a-z0-9]: '));
 console.log('Your generated projectName: ' + targetProjectName);
 
-const rootDir = path.join(__dirname, '..');
+const rootDir = path.join(__dirname, '..', '..');
 const sourceDir = path.join(rootDir, 'src', 'main', 'java', 'com');
 const sourceCompanyDir = path.join(sourceDir, sourceCompanyName);
 const targetCompanyDir = path.join(sourceDir, targetCompanyName);
