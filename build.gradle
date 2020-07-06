@@ -93,6 +93,7 @@ openApiGenerate {
 	]
 }
 
+build.dependsOn('testIntegration')
 task testIntegration(type: Test) {
 	testClassesDirs = sourceSets.testIntegration.output.classesDirs
 	classpath = sourceSets.testIntegration.runtimeClasspath
@@ -109,9 +110,6 @@ task testIntegration(type: Test) {
 
 test.finalizedBy jacocoTestReport
 testIntegration.finalizedBy jacocoTestReport
-
-build.dependsOn('testIntegration')
-
 jacocoTestReport {
 	reports {
 		xml.enabled false
@@ -119,3 +117,9 @@ jacocoTestReport {
 		html.destination file("${buildDir}/jacocoHtml")
 	}
 }
+
+task installGitHooks(type: Copy) {
+	from new File(rootProject.rootDir, 'scripts/git-hooks')
+	into { new File(rootProject.rootDir, '.git/hooks') }
+}
+build.dependsOn installGitHooks

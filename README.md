@@ -3,10 +3,10 @@
 ## Create new project 
 1. To create a new project, create a new github repository and select this project as repository template.
 2. Import the project in your favourite IDE.
-3. Go to folder `init-script` and run:
+3. Go to folder `/scripts/init-script` and run:
     <pre><code>npm install
    npm start</code></pre>
-4. Delete folder `init-script`
+4. Delete folder `/scripts/init-script`
 7. (Optional) Adapt the CI/CD workflow under[.github/workflows/onPush.yml](.github/workflows/onPush.yml) to your needs (e. g. turn on docker push to registry).
 
 ## Quick Start
