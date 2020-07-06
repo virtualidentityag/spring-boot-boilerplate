@@ -38,12 +38,12 @@ function sanitize(input) {
 }
 
 const filesForSearchAndReplace = [
-  '../src/**/**.java',
-  '../api/**',
-  '../build.gradle',
-  '../settings.gradle',
-  '../package.json',
-  '../package-lock.json'
+  '../../src/**/**.java',
+  '../../api/**',
+  '../../build.gradle',
+  '../../settings.gradle',
+  '../../package.json',
+  '../../package-lock.json'
 ]
 
 async function replaceCompanyName() {
@@ -80,7 +80,7 @@ async function replaceGitUrl() {
   const gitUrl = await gitRemoteOriginUrl();
 
   await replace({
-    files: ['../package.json'],
+    files: ['../../package.json'],
 
     from: 'git@github.com:virtualidentityag/spring-boot-boilerplate.git',
     to: gitUrl
@@ -103,7 +103,7 @@ async function run() {
   await replaceGitUrl();
 
 
-  fs.truncateSync('../doc/CHANGELOG.md', 0, function(){console.log('done')});
+  fs.truncateSync('../../doc/CHANGELOG.md', 0, function(){console.log('done')});
 
   if(fs.existsSync(sourceCompanyDir)) {
     fs.renameSync(sourceCompanyDir, targetCompanyDir, function(err) {
