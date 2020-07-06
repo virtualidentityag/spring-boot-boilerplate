@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/virtualidentityag/spring-boot-boilerplate/compare/v1.1.0...v1.1.1) (2020-07-06)
+
+
+### Bug Fixes
+
+* fix moved init script ([ed02c49](https://github.com/virtualidentityag/spring-boot-boilerplate/commit/ed02c49d9b5a4df0378097f6a135e8d218860df2))
+
 # [1.1.0](https://github.com/virtualidentityag/spring-boot-boilerplate/compare/v1.0.1...v1.1.0) (2020-07-06)
 
 
