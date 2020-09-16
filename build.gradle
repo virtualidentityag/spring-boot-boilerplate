@@ -24,6 +24,7 @@ repositories {
 dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-actuator'
 	compile 'org.springframework.boot:spring-boot-starter-hateoas'
+	compile 'org.springframework.boot:spring-boot-starter-validation'
 
 	// add to fix incompatibility of spring boot
 	compile 'org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE'
@@ -33,8 +34,6 @@ dependencies {
 
 	compile 'io.springfox:springfox-swagger2:2.9.2'
 	compile 'io.springfox:springfox-swagger-ui:2.9.2'
-
-	compile 'javax.validation:validation-api:2.0.1.Final'
 
 	testCompile('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
