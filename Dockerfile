@@ -1,4 +1,4 @@
-FROM openjdk:13-alpine
+FROM openjdk:14-alpine
 VOLUME /tmp
 ARG JAR_FILE=build/libs/app.jar
 ADD ${JAR_FILE} app.jar

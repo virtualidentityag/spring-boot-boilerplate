@@ -13,7 +13,8 @@
 
 Before you build and run the app make sure that following prerequisites are met:
 
-1. JDK 13 is installed.
+1. JDK 14 is installed.
+2. Gradle (>= 6.6.1) is installed
 
 You can compile and run the application locally with
 <pre><code>gradlew bootRun</code></pre>
