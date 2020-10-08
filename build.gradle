@@ -123,7 +123,6 @@ sonarqube {
 		property "sonar.projectKey", "spring-boot-boilerplate"
 		property "sonar.organization", "virtualidentityag"
 		property "sonar.host.url", "https://sonarcloud.io"
-		property "sonar.login", "0b2550504b8b80e6195e1cb21f33723bbd38e048"
 	}
 }
 
