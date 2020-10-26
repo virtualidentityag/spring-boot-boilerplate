@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/virtualidentityag/spring-boot-boilerplate/compare/v1.1.2...v1.2.0) (2020-10-26)
+
+
+### Features
+
+* build docker image with gradle bootBuildImage command ([#9](https://github.com/virtualidentityag/spring-boot-boilerplate/issues/9)) ([d4a2860](https://github.com/virtualidentityag/spring-boot-boilerplate/commit/d4a2860a781cfd9c66bfdb2597f8e7d6353d3bf1))
+
 ## [1.1.2](https://github.com/virtualidentityag/spring-boot-boilerplate/compare/v1.1.1...v1.1.2) (2020-07-06)
 
 
