@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/virtualidentityag/spring-boot-boilerplate/compare/v1.2.0...v1.3.0) (2020-10-26)
+
+
+### Features
+
+* add build and git info endpoint for actuator ([#10](https://github.com/virtualidentityag/spring-boot-boilerplate/issues/10)) ([5e15d5d](https://github.com/virtualidentityag/spring-boot-boilerplate/commit/5e15d5dbbb74c08ecf4d2fb44a498c93b96f69c4))
+
 # [1.2.0](https://github.com/virtualidentityag/spring-boot-boilerplate/compare/v1.1.2...v1.2.0) (2020-10-26)
 
 
