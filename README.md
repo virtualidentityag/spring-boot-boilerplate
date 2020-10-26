@@ -69,6 +69,11 @@ Adapt and extend the classes `RestExceptionHandler` and `RestErrorCode` to your 
 A full build including all unit and integration tests can be triggered by running 
 <pre><code>gradlew build</code></pre>
 
+## Application Monitoring
+A health-check endpoint is provided under `/actuator/health`
+ 
+An endpoint with git and build info is provided under `/actuator/info` 
+
 ## Semantic Versioning
 This projects version is maintained by [semantic-release](https://github.com/semantic-release/semantic-release) tool.
 
