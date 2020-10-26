@@ -6,6 +6,7 @@ plugins {
 	id 'jacoco'
 	id 'org.sonarqube' version '3.0'
 	id 'org.openapi.generator' version '4.2.1'
+	id "com.gorylenko.gradle-git-properties" version "2.2.3"
 }
 
 group = 'com.myCompanyName.myProjectName'
@@ -61,6 +62,10 @@ idea {
 		testSourceDirs += project.sourceSets.testIntegration.java.srcDirs
 		testSourceDirs += project.sourceSets.testIntegration.resources.srcDirs
 	}
+}
+
+springBoot {
+	buildInfo()
 }
 
 test {
