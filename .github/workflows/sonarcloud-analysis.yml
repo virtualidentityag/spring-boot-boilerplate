@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  SonarCloud Analysis:
+  SonarCloud-Analysis:
 
     runs-on: ubuntu-latest
 
