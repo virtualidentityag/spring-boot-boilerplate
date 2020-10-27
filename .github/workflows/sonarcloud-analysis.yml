@@ -18,4 +18,4 @@ jobs:
           java-version: 14
 
       - name: Build & test with Gradle
-        run: ./gradlew sonarqube -Dsonar.login=${{ secrets.SONARCLOUD_LOGIN_KEY }} -Dsonar.branch.name=${{ github.ref }}
+        run: ./gradlew sonarqube -Dsonar.login=${{ secrets.SONARCLOUD_LOGIN_KEY }} -Dsonar.branch.name=test-branch
