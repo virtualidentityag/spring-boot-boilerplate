@@ -18,4 +18,6 @@ jobs:
           java-version: 14
 
       - name: Build & test with Gradle
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         run: ./gradlew sonarqube -Dsonar.login=${{ secrets.SONARCLOUD_LOGIN_KEY }} --stacktrace
