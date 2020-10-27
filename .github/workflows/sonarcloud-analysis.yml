@@ -1,0 +1,21 @@
+name: SonarCloud Analysis
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  SonarCloud Analysis:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Set up JDK 14
+        uses: actions/setup-java@v1
+        with:
+          java-version: 14
+
+      - name: Build & test with Gradle
+        run: ./gradlew sonarqube -Dsonar.login=${{ secrets.SONARCLOUD_LOGIN_KEY }} -Dsonar.branch.name=${{ github.ref }}
