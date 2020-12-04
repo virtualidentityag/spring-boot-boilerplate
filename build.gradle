@@ -33,7 +33,7 @@ dependencies {
 	compile 'io.swagger.core.v3:swagger-annotations:2.1.1'
 	compile 'org.openapitools:jackson-databind-nullable:0.2.1'
 
-	compile 'io.springfox:springfox-swagger2:2.9.2'
+	compile 'io.springfox:springfox-swagger2:3.0.0'
 	compile 'io.springfox:springfox-swagger-ui:2.9.2'
 
 	testCompile('org.springframework.boot:spring-boot-starter-test') {
