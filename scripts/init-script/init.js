@@ -76,6 +76,15 @@ async function replaceProjectName() {
   });
 }
 
+async function replaceSonarCloudProjectName() {
+  await replace({
+    files: ['../../build.gradle'],
+
+    from: 'virtualidentityag_spring-boot-boilerplate',
+    to: 'virtualidentityag_' + targetCompanyName + '-' + targetProjectName
+  });
+}
+
 async function replaceGitUrl() {
   const gitUrl = await gitRemoteOriginUrl();
 
@@ -101,6 +110,7 @@ async function run() {
   await replaceProjectName();
   await replaceCompanyName();
   await replaceGitUrl();
+  await replaceSonarCloudProjectName();
 
 
   fs.truncateSync('../../doc/CHANGELOG.md', 0, function(){console.log('done')});
