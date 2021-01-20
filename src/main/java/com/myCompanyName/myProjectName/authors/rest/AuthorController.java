@@ -27,7 +27,7 @@ public class AuthorController extends BaseController implements AuthorsApi {
 
     Author author1 = new Author()
         .firstname("Max")
-        .lastname("Mustermann")
+        .lastname("Mustermann2")
         .links(new AuthorLinks().self(getAuthorLink(1)));
 
     Author author2 = new Author()
