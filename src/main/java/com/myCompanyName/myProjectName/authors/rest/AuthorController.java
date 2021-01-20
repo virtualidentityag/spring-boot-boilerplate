@@ -11,7 +11,6 @@ import com.myCompanyName.myProjectName.generated.model.AuthorListLinks;
 import com.myCompanyName.myProjectName.generated.model.HalLink;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.stream.Stream;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
