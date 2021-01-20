@@ -1,6 +1,6 @@
 package com.myCompanyName.myProjectName.common.rest.error;
 
-import com.myCompanyName.myProjectName.generated.model.Error;
+import com.myCompanyName.generated.myProjectName.model.Error;
 import java.util.UUID;
 
 public class RestErrorBuilder {

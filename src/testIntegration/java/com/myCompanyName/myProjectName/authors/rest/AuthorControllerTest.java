@@ -4,9 +4,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.myCompanyName.myProjectName.ApiMatchers;
 import com.myCompanyName.myProjectName.WebMvcTest;
-import com.myCompanyName.myProjectName.generated.model.Author;
-import com.myCompanyName.myProjectName.generated.model.AuthorList;
-import com.myCompanyName.myProjectName.generated.model.Error;
+import com.myCompanyName.generated.myProjectName.model.Author;
+import com.myCompanyName.generated.myProjectName.model.AuthorList;
+import com.myCompanyName.generated.myProjectName.model.Error;
 import org.junit.jupiter.api.Test;
 
 public class AuthorControllerTest extends WebMvcTest {

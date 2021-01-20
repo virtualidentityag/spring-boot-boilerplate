@@ -36,6 +36,9 @@ dependencies {
 	compile 'io.springfox:springfox-swagger2:2.9.2'
 	compile 'io.springfox:springfox-swagger-ui:2.9.2'
 
+	compile 'org.moduliths:moduliths-core:1.1.0-M1'
+	testCompile 'org.moduliths:moduliths-test:1.1.0-M1'
+
 	testCompile('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
@@ -84,9 +87,9 @@ openApiGenerate {
 	inputSpec.set(file('./api/api.yaml').getAbsolutePath())
 	outputDir.set("$buildDir/generated/openapi")
 
-	apiPackage.set("com.myCompanyName.myProjectName.generated")
+	apiPackage.set("com.myCompanyName.generated.myProjectName")
 	invokerPackage.set("com.myCompanyName.myProjectName.invoker")
-	modelPackage.set("com.myCompanyName.myProjectName.generated.model")
+	modelPackage.set("com.myCompanyName.generated.myProjectName.model")
 
 	configOptions = [
 			dateLibrary: "java8"
