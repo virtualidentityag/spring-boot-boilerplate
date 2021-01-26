@@ -2,8 +2,8 @@ package com.myCompanyName.myProjectName.common.rest.controller;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
-import com.myCompanyName.generated.myProjectName.model.HalLink;
-import com.myCompanyName.generated.myProjectName.model.HalLink.MethodEnum;
+import com.myCompanyName.myProjectName.generated.model.HalLink;
+import com.myCompanyName.myProjectName.generated.model.HalLink.MethodEnum;
 import org.springframework.hateoas.Link;
 import org.springframework.http.HttpEntity;
 

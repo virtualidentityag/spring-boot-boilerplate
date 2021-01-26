@@ -3,7 +3,7 @@ package com.myCompanyName.myProjectName.common.rest.error;
 import static com.myCompanyName.myProjectName.common.rest.error.RestErrorCode.SERVER_ERROR;
 import static com.myCompanyName.myProjectName.common.rest.error.RestErrorCode.VALIDATION_EXCEPTION;
 
-import com.myCompanyName.generated.myProjectName.model.Error;
+import com.myCompanyName.myProjectName.generated.model.Error;
 import javax.validation.ValidationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

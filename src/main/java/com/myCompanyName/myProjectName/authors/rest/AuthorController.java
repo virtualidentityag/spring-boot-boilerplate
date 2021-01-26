@@ -3,12 +3,12 @@ package com.myCompanyName.myProjectName.authors.rest;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import com.myCompanyName.myProjectName.common.rest.controller.BaseController;
-import com.myCompanyName.generated.myProjectName.AuthorsApi;
-import com.myCompanyName.generated.myProjectName.model.Author;
-import com.myCompanyName.generated.myProjectName.model.AuthorLinks;
-import com.myCompanyName.generated.myProjectName.model.AuthorList;
-import com.myCompanyName.generated.myProjectName.model.AuthorListLinks;
-import com.myCompanyName.generated.myProjectName.model.HalLink;
+import com.myCompanyName.myProjectName.generated.AuthorsApi;
+import com.myCompanyName.myProjectName.generated.model.Author;
+import com.myCompanyName.myProjectName.generated.model.AuthorLinks;
+import com.myCompanyName.myProjectName.generated.model.AuthorList;
+import com.myCompanyName.myProjectName.generated.model.AuthorListLinks;
+import com.myCompanyName.myProjectName.generated.model.HalLink;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.springframework.http.HttpStatus;

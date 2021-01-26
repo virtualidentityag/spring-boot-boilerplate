@@ -1,6 +1,6 @@
 package com.myCompanyName.myProjectName.common.rest.error;
 
-import com.myCompanyName.generated.myProjectName.model.Error;
+import com.myCompanyName.myProjectName.generated.model.Error;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

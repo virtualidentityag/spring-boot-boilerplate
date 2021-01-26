@@ -87,9 +87,9 @@ openApiGenerate {
 	inputSpec.set(file('./api/api.yaml').getAbsolutePath())
 	outputDir.set("$buildDir/generated/openapi")
 
-	apiPackage.set("com.myCompanyName.generated.myProjectName")
+	apiPackage.set("com.myCompanyName.myProjectName.generated")
 	invokerPackage.set("com.myCompanyName.myProjectName.invoker")
-	modelPackage.set("com.myCompanyName.generated.myProjectName.model")
+	modelPackage.set("com.myCompanyName.myProjectName.generated.model")
 
 	configOptions = [
 			dateLibrary: "java8"
