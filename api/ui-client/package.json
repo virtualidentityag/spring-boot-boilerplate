@@ -1,7 +1,7 @@
 {
-  "name": "CAD-API",
+  "name": "REST-API",
   "version": "1.0.0",
-  "description": "Siedle CAD REST API",
+  "description": "myProjectName REST API",
   "scripts": {
     "start": "node app"
   },
