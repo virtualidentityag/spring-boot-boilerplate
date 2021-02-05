@@ -75,7 +75,10 @@ This can only be reached by a well structured codebase. In concrete terms this m
 in a modular way by avoiding cyclic dependencies and reducing unnecessary accessability to module-internal code. 
 This leads to a Modular Monolith (or Modulith) from which modules [can be extracted into external services at any time with minimal effort](https://martinfowler.com/bliki/MonolithFirst.html).
 
-To inforce a modular codebase, the [moduliths](https://github.com/odrotbohm/moduliths) library is used.  
+To inforce a modular codebase, the [moduliths](https://github.com/odrotbohm/moduliths) library is used. 
+The module model is explained [here](https://github.com/odrotbohm/moduliths#modules) and [here](https://github.com/odrotbohm/moduliths#modules.complex).
+
+In the end it's about reducing accessibility of classes to a minimum, hiding internals of modules and preventing cyclic dependencies.  
 
 
 ## Application Monitoring
