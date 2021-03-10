@@ -26,7 +26,7 @@ public class AuthorController extends BaseController implements AuthorsApi {
       @RequestParam(value = "offset", required = false, defaultValue = "0") Integer offset) {
 
     Author author1 = new Author()
-        .firstname("Max")
+        .firstname("Max2")
         .lastname("Mustermann")
         .links(new AuthorLinks().self(getAuthorLink(1)));
 
