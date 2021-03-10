@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.4.2'
+	id 'org.springframework.boot' version '2.4.3'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
 	id 'idea'
@@ -35,6 +35,9 @@ dependencies {
 
 	compile 'io.springfox:springfox-swagger2:2.9.2'
 	compile 'io.springfox:springfox-swagger-ui:2.9.2'
+
+	compile 'org.moduliths:moduliths-core:1.1.0-M1'
+	testCompile 'org.moduliths:moduliths-test:1.1.0-M1'
 
 	testCompile('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
@@ -114,12 +117,16 @@ task testIntegration(type: Test) {
 }
 
 test.finalizedBy jacocoTestReport
-testIntegration.finalizedBy jacocoTestReport
 jacocoTestReport {
 	reports {
 		xml.enabled true
 		csv.enabled false
-		html.destination file("${buildDir}/jacocoHtml")
+	}
+
+	afterEvaluate {
+		classDirectories.from = files(classDirectories.files.collect {
+			fileTree(dir: it, exclude: '**/generated**')
+		})
 	}
 }
 
