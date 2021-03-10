@@ -117,12 +117,16 @@ task testIntegration(type: Test) {
 }
 
 test.finalizedBy jacocoTestReport
-testIntegration.finalizedBy jacocoTestReport
 jacocoTestReport {
 	reports {
 		xml.enabled true
 		csv.enabled false
-		html.destination file("${buildDir}/jacocoHtml")
+	}
+
+	afterEvaluate {
+		classDirectories.from = files(classDirectories.files.collect {
+			fileTree(dir: it, exclude: '**/generated**')
+		})
 	}
 }
 
