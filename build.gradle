@@ -11,7 +11,7 @@ plugins {
 
 group = 'com.myCompanyName.myProjectName'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '14'
+sourceCompatibility = '15'
 
 configurations {
 	testIntegrationCompile.extendsFrom testCompile
@@ -114,6 +114,10 @@ task testIntegration(type: Test) {
 	testLogging {
 		events "passed", "skipped", "failed"
 	}
+}
+
+jacoco {
+	toolVersion = "0.8.6"
 }
 
 test.finalizedBy jacocoTestReport
