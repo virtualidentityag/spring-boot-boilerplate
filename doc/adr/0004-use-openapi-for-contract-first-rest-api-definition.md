@@ -3,7 +3,7 @@
 ## Context and Problem Statement
 We very much like the idea of **Contract first** when it comes to interface design.
 This leads to a more stable and well thought API and also to a more decoupled, interface centric implementation of client and server parts.
-The developers (frontend and backend) can define a contract together and than go apart and implement or use the contract independently.
+The developers (frontend and backend) can define a contract together and then go apart and implement or use the contract independently.
 
 Another important topic is code generation from API specification. Generating request and response models from an API specification on client 
 and server side prevents problem when integrating the API into the application, because the application is always "compiled" against the API.

@@ -2,18 +2,19 @@
 
 ## Create new project 
 1. To create a new project, create a new github repository and select this project as repository template.
-2. Import the project in your favourite IDE.
-3. Go to folder `/scripts/init-script` and run:
+2. Create initial git tag "0.0.1"
+3. Import the project in your favourite IDE.
+4. Go to folder `/scripts/init-script` and run:
     <pre><code>npm install
    npm start</code></pre>
-4. Delete folder `/scripts/init-script`
-7. (Optional) Adapt the CI/CD workflow under[.github/workflows/onPush.yml](.github/workflows/onPush.yml) to your needs (e. g. turn on docker push to registry).
+5. Delete folder `/scripts/init-script`
+6. (Optional) Adapt the CI/CD workflow under[.github/workflows/onPush.yml](.github/workflows/onPush.yml) to your needs (e. g. turn on docker push to registry).
 
 ## Quick Start
 
 Before you build and run the app make sure that following prerequisites are met:
 
-1. JDK 14 is installed.
+1. JDK 15 is installed.
 2. Gradle (>= 6.6.1) is installed
 
 You can compile and run the application locally with
@@ -71,11 +72,11 @@ A full build including all unit and integration tests can be triggered by runnin
 
 ## Code Structure
 An important goal is to preserve long-term maintainability of the code. 
-This can only be reached by a well structured codebase. In concrete terms this means that the code must be structured 
+This can only be reached by a well-structured codebase. In concrete terms this means that the code must be structured 
 in a modular way by avoiding cyclic dependencies and reducing unnecessary accessability to module-internal code. 
 This leads to a Modular Monolith (or Modulith) from which modules [can be extracted into external services at any time with minimal effort](https://martinfowler.com/bliki/MonolithFirst.html).
 
-To inforce a modular codebase, the [moduliths](https://github.com/odrotbohm/moduliths) library is used. 
+To enforce a modular codebase, the [moduliths](https://github.com/odrotbohm/moduliths) library is used. 
 The module model is explained [here](https://github.com/odrotbohm/moduliths#modules) and [here](https://github.com/odrotbohm/moduliths#modules.complex).
 
 In the end it's about reducing accessibility of classes to a minimum, hiding internals of modules and preventing cyclic dependencies.  

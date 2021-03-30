@@ -15,7 +15,7 @@ Which one we want to use?
 Chosen option: "HATEOAS with HAL", because 
 
 * Spring Boot provides a HTEOAS/HAL integration module
-* HAL is simple to use and easy to understand while having a powerfull structure.
+* HAL is simple to use and easy to understand while having a powerful structure.
 * HAL is the de-facto standard
 
 ### HATEOAS
@@ -26,7 +26,7 @@ Clients can interact with our application entirely through hypermedia provided d
 The core principal of HATEOAS is that every resource includes further or consecutive links. 
 
 E.g. every entry in a search result provides a link to its details.
-And further, every detail resource provides links to further functions or facets of this entity.
+Further, every detail resource provides links to further functions or facets of this entity.
 See [https://en.wikipedia.org/wiki/HATEOAS#Details](https://en.wikipedia.org/wiki/HATEOAS#Details) for an example.
 
 With HATEOAS we can encapsulate the link building in the resource creation at the server.
