@@ -5,13 +5,13 @@ Which Java version can be used?
 
 ## Considered Options
 
-* Java 14 (current version)
+* Java 15 (current version)
 * older versions (e. g. Java 1.8)
 
 ## Decision Outcome
 
-Chosen option: Java 14 (current version), because 
+Chosen option: Java 15 (current version), because 
 
-* use latest features of Java 
+* use the latest features of Java 
 * security updates and patches
-* Spring Boot 2.3.x supports Java 14   
+* Spring Boot 2.3.x supports Java 15   
