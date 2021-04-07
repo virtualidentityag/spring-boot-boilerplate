@@ -9,6 +9,11 @@ plugins {
 	id "com.gorylenko.gradle-git-properties" version "2.2.4"
 }
 
+ext {
+	set('springCloudVersion', "2020.0.2")
+}
+
+
 group = 'com.myCompanyName.myProjectName'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '15'
@@ -26,6 +31,7 @@ dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-actuator'
 	compile 'org.springframework.boot:spring-boot-starter-hateoas'
 	compile 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
 
 	// add to fix incompatibility of spring boot
 	compile 'org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE'
@@ -41,6 +47,12 @@ dependencies {
 
 	testCompile('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
 }
 

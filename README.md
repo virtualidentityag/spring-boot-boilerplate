@@ -81,6 +81,9 @@ The module model is explained [here](https://github.com/odrotbohm/moduliths#modu
 
 In the end it's about reducing accessibility of classes to a minimum, hiding internals of modules and preventing cyclic dependencies.  
 
+## Logging
+[Spring Sleuth](https://spring.io/projects/spring-cloud-sleuth) is included in this boilerplate to support trace ids which are added to all log messages that originate from a request. 
+Further, trace ids are also forwarded automatically to other services called by Spring's RestTemplate that are also based on this boilerplate or include Spring Sleuth. This means that distributed tracing is supported out of the box.     
 
 ## Application Monitoring
 A health-check endpoint is provided under `/actuator/health`
