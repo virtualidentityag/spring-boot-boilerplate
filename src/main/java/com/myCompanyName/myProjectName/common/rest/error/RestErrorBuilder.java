@@ -13,7 +13,7 @@ import static java.util.Objects.nonNull;
 @Component
 public class RestErrorBuilder {
 
-    private Tracer tracer;
+    private final Tracer tracer;
 
     public RestErrorBuilder(final Tracer tracer) {
         this.tracer = tracer;

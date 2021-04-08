@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class RestExceptionHandler {
 
-  private RestErrorBuilder restErrorBuilder;
-  private RestErrorLogger restErrorLogger;
+  private final RestErrorBuilder restErrorBuilder;
+  private final RestErrorLogger restErrorLogger;
 
   public RestExceptionHandler(final RestErrorBuilder restErrorBuilder, final RestErrorLogger restErrorLogger) {
     this.restErrorBuilder = restErrorBuilder;
