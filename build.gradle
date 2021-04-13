@@ -34,7 +34,7 @@ dependencies {
 	compile 'org.springframework.cloud:spring-cloud-starter-sleuth'
 
 	// add to fix incompatibility of spring boot
-	compile 'org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE'
+	compile 'org.springframework.plugin:spring-plugin-core:2.0.0.RELEASE'
 
 	compile 'io.swagger.core.v3:swagger-annotations:2.1.1'
 	compile 'org.openapitools:jackson-databind-nullable:0.2.1'
