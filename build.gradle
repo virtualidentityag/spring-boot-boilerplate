@@ -5,7 +5,7 @@ plugins {
 	id 'idea'
 	id 'jacoco'
 	id 'org.sonarqube' version '3.0'
-	id 'org.openapi.generator' version '4.2.1'
+	id 'org.openapi.generator' version '5.1.0'
 	id "com.gorylenko.gradle-git-properties" version "2.2.4"
 }
 
