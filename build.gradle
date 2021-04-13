@@ -42,7 +42,7 @@ dependencies {
 	compile 'io.springfox:springfox-swagger2:2.9.2'
 	compile 'io.springfox:springfox-swagger-ui:2.9.2'
 
-	compile 'org.moduliths:moduliths-core:1.1.0-M1'
+	compile 'org.moduliths:moduliths-core:1.1.0-RC2'
 	testCompile 'org.moduliths:moduliths-test:1.1.0-M1'
 
 	testCompile('org.springframework.boot:spring-boot-starter-test') {
