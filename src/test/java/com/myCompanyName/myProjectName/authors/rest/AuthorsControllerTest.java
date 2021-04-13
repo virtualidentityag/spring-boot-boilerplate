@@ -11,10 +11,10 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 
-public class AuthorsControllerTest {
+class AuthorsControllerTest {
 
   @Test
-  public void WHEN_get_authors_THEN_response_is_not_null() {
+  void WHEN_get_authors_THEN_response_is_not_null() {
     // Arrange
     AuthorController authorController = new AuthorController();
 
@@ -26,7 +26,7 @@ public class AuthorsControllerTest {
   }
 
   @Test
-  public void WHEN_get_authors_THEN_response_contains_list_of_authors() {
+  void WHEN_get_authors_THEN_response_contains_list_of_authors() {
     // Arrange
     AuthorController authorController = new AuthorController();
 
@@ -40,7 +40,7 @@ public class AuthorsControllerTest {
   }
 
   @Test
-  public void WHEN_get_author_by_id_THEN_response_is_not_null() {
+  void WHEN_get_author_by_id_THEN_response_is_not_null() {
     // Arrange
     AuthorController authorController = new AuthorController();
 
@@ -52,7 +52,7 @@ public class AuthorsControllerTest {
   }
 
   @Test
-  public void WHEN_get_author_by_id_THEN_response_contains_author_with_data() {
+  void WHEN_get_author_by_id_THEN_response_contains_author_with_data() {
     // Arrange
     AuthorController authorController = new AuthorController();
 

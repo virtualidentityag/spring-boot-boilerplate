@@ -3,7 +3,9 @@ package com.myCompanyName.myProjectName.common.rest.error;
 import com.myCompanyName.myProjectName.generated.model.Error;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RestErrorLogger {
 
   private static final Logger logger = LoggerFactory.getLogger(RestExceptionHandler.class);

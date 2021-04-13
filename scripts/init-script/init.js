@@ -39,6 +39,7 @@ function sanitize(input) {
 
 const filesForSearchAndReplace = [
   '../../src/**/**.java',
+  '../../src/**/**.properties',
   '../../api/**',
   '../../build.gradle',
   '../../settings.gradle',

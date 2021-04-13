@@ -14,8 +14,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class RestExceptionHandler {
 
-  private RestErrorBuilder restErrorBuilder = new RestErrorBuilder();
-  private RestErrorLogger restErrorLogger = new RestErrorLogger();
+  private final RestErrorBuilder restErrorBuilder;
+  private final RestErrorLogger restErrorLogger;
+
+  public RestExceptionHandler(final RestErrorBuilder restErrorBuilder, final RestErrorLogger restErrorLogger) {
+    this.restErrorBuilder = restErrorBuilder;
+    this.restErrorLogger = restErrorLogger;
+  }
 
   @ExceptionHandler({Exception.class})
   @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)

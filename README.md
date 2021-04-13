@@ -81,6 +81,12 @@ The module model is explained [here](https://github.com/odrotbohm/moduliths#modu
 
 In the end it's about reducing accessibility of classes to a minimum, hiding internals of modules and preventing cyclic dependencies.  
 
+## Logging
+[Spring Sleuth](https://spring.io/projects/spring-cloud-sleuth) is included in this boilerplate to support trace ids which are added to all log messages that originate from a request.
+The logging format will be added with the following information [application name,trace id, span id]. The application name got read from the SPRING_APPLICATION_NAME environment variable.
+<pre><code>2020-10-21 12:01:16.285  INFO <b>[myProjectName-service,0b6aaf642574edd3,0b6aaf642574edd3]</b> 289589 --- [nio-9000-exec-1] Example              : Hello world!
+</code></pre>
+Further, trace ids are also forwarded automatically to other services called by Spring's RestTemplate or JmsTemplate that are also based on this boilerplate or include Spring Sleuth. This means that distributed tracing is supported out of the box.     
 
 ## Application Monitoring
 A health-check endpoint is provided under `/actuator/health`
